@@ -50,7 +50,7 @@ Este projeto é uma ferramenta completa para:
 ### 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seuusuario/universal-camera-detector.git
+git clone https://github.com/pedroaglailton/universal-camera-detector.git
 cd universal-camera-detector
 
 2. Instale as dependências:
@@ -124,14 +124,14 @@ Galeria de thumbnails
 
 📝 Contribuir
 Contribuições são bem-vindas! Abra uma issue ou pull request no GitHub:
-👉 github.com/seuusuario/universal-camera-detector
+👉 github.com/pedroaglailton/universal-camera-detector
 
 💬 Suporte
 Tem dúvidas ou sugestões? Entre em contato!
 
 Pedro Aglailton
-📧 pedro.aglailton@example.com
-🌐 github.com/seuusuario
+📧 pedro.aglailton@gmail.com
+🌐 github.com/pedroaglailton
 
 © Licença
 MIT License – veja o arquivo LICENSE para detalhes.
