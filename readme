@@ -1,0 +1,139 @@
+# 🔧 Universal Camera Detector
+
+Detector universal de câmeras IP com interface Streamlit.  
+Suporta **Hikvision** e **Dahua**, captura **thumbnails** e exporta resultados para **Excel/CSV**.
+
+---
+
+## 🎯 Sobre
+
+Este projeto é uma ferramenta completa para:
+- **Descobrir câmeras IP na rede**
+- **Detectar marca/modelo automaticamente**
+- **Capturar thumbnails em tempo real**
+- **Visualizar configurações de rede**
+- **Aplicar novas configurações de IP, máscara e gateway**
+- **Exportar relatórios detalhados (com imagens no Excel)**
+
+---
+
+## ✅ Funcionalidades
+
+- **Detecção automática de Hikvision e Dahua**
+- Interface gráfica web via [Streamlit](https://streamlit.io/)
+- Captura de thumbnail das câmeras online
+- Exportação para:
+  - CSV (texto simples)
+  - CSV com base64 (inclui imagens como texto codificado)
+  - Excel com thumbnails incorporadas (via `openpyxl`)
+- Aplicação de configurações de rede por arquivo de configuração
+- Estatísticas e gráficos interativos
+
+---
+
+## 🛠️ Tecnologias Usadas
+
+| Tecnologia | Descrição |
+|-----------|-----------|
+| Python    | Linguagem principal |
+| Streamlit | Interface web dinâmica |
+| Requests  | Requisições HTTP para APIs ISAPI e CGI |
+| lxml      | Parsing XML (Hikvision) |
+| Pillow    | Manipulação de imagens |
+| openpyxl  | Exportação Excel com imagens |
+| concurrent.futures | Processamento paralelo |
+
+---
+
+## 📦 Como Instalar
+
+### 1. Clone o repositório:
+
+```bash
+git clone https://github.com/seuusuario/universal-camera-detector.git
+cd universal-camera-detector
+
+2. Instale as dependências:
+
+pip install -r requirements.txt
+3. Instale o pacote localmente:
+
+pip install -e .
+
+🚀 Como Usar
+1. Executar a interface Streamlit:
+
+streamlit run app.py
+2. Ou usar no terminal (CLI):
+
+camera-detector
+⚠️ A CLI requer que você tenha configurado o entry_points no setup.py (já incluso)
+
+📁 Estrutura do Projeto
+
+universal-camera-detector/
+├── universal_camera_detector/
+│   ├── __init__.py
+│   ├── detector.py          # Lógica central
+│   ├── hikvision_handler.py # Handler para Hikvision
+│   ├── dahua_handler.py     # Handler para Dahua
+│   ├── exporters.py         # Exportação para CSV e Excel
+│   └── utils.py             # Funções auxiliares
+├── app.py                   # Interface Streamlit
+├── setup.py                 # Configuração do pacote
+└── requirements.txt
+
+📄 Exemplo de Uso Programático
+
+from universal_camera_detector.detector import UniversalCameraDetector
+
+detector = UniversalCameraDetector()
+
+# Detecta uma câmera
+ip = "192.168.1.101"
+username_list = ["admin", "root"]
+password_list = ["admin123", "12345"]
+
+camera_info = detector.detect_camera_brand(ip, username_list, password_list, protocol="http", port=80, timeout=5)
+
+if camera_info:
+    print("Câmera detectada!")
+    print(camera_info)
+	
+📤 Arquivos Suportados
+Para descoberta de câmeras:
+.txt: Lista de IPs (um por linha)
+Para aplicação de configurações:
+.txt: Formato: ip_atual,ip_novo,máscara,gateway
+
+📊 Relatórios Gerados
+O sistema gera os seguintes relatórios:
+Tipo	Conteúdo
+CSV Simples	Dados textuais sem imagens
+CSV Base64	Inclui imagens como texto codificado
+Excel	Tabela com miniaturas visíveis (se openpyxl estiver instalado)
+📈 Estatísticas e Gráficos
+A aba de estatísticas mostra:
+
+Quantidade de câmeras online/offline
+Distribuição por marca (Hikvision/Dahua)
+Modelos mais comuns
+Galeria de thumbnails
+
+
+
+📝 Contribuir
+Contribuições são bem-vindas! Abra uma issue ou pull request no GitHub:
+👉 github.com/seuusuario/universal-camera-detector
+
+💬 Suporte
+Tem dúvidas ou sugestões? Entre em contato!
+
+Pedro Aglailton
+📧 pedro.aglailton@example.com
+🌐 github.com/seuusuario
+
+© Licença
+MIT License – veja o arquivo LICENSE para detalhes.
+
+
