@@ -9,7 +9,7 @@ setup(
     description="Detector universal de câmeras Hikvision e Dahua com captura de thumbnail e interface Streamlit",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/seuusuario/universal-camera-detector",
+    url="https://github.com/pedroaglailton/universal-camera-detector",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
